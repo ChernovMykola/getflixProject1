@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const Post = require('./models/post');
-
+const User = require('./models/user');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const morgan = require('morgan');
+const authRoutes = require('./routes/checkuser');
 const path = require('path');
 
 const port = 3000;
@@ -20,7 +23,13 @@ const createPath = (page) => path.resolve(__dirname, 'views', `${page}.html`);
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+app.use(morgan('dev'))
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+app.use(cors())
 
+
+app.use('/api/auth', authRoutes)
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
