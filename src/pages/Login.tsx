@@ -53,6 +53,9 @@ export default function Login() {
                 id="password"
                 placeholder="Enter password"
               />
+              <Link to="" className="text-white hover:underline">
+                Forgot Password?
+              </Link>
               <button className="my-8 rounded-md bg-netflixRed p-2 font-semibold text-white outline-none">
                 Log In
               </button>
