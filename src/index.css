@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: theme("colors.black");
+    color: theme("colors.white");
+  }
+  
+  .row-container:hover .opacity-0 {
+    opacity: theme("opacity.100");
+  }
+  
