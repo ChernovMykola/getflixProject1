@@ -2,6 +2,9 @@ const bcrypt = require('bcryptjs')
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')
 const keys = require('../config/keys')
+// const express = require('express');
+// const app = express();
+
 
 module.exports.login = async function(req, res)  {
      const candidate = await User.findOne({email: req.body.email})
@@ -16,7 +19,7 @@ module.exports.login = async function(req, res)  {
             }, 'keys.jwt', {expiresIn: 60 * 60})
  
             res.status(200).json({
-                token: token
+                token: `Bearer ${token}`
             })
          }else{
             //password is not correcrly
@@ -56,7 +59,7 @@ module.exports.register = async function(req, res){
                 massage: "User has been created!"
             })
         }catch(e){
-
+            console.log('e')
         }
     }else{
         res.status(409).json({
@@ -65,6 +68,80 @@ module.exports.register = async function(req, res){
     }
     }
 
+    // app.use(express.json())
+    // app.use(express.urlencoded({extended: false}))
+    // app.set('view engine', 'ejs')
+
+    // const JWT_secret = 'secret-token'
+    // app.get('/forgot-password', (req, res, next) => {
+    //     res.render('forgot-password')
+    //   })
+      
+    //   app.post('/forgot-password', (req, res, next) => { 
+    //     // const email = req.body.email
+    //     // res.send(email);
+        
+    //     module.exports.newpass = async function(req, res)  {
+    //       const candidate = await User.findOne({email: req.body.email})
+    //       if(candidate){
+    //         const secret = JWT_secret + candidate.password
+    //         const payload =  {
+    //           email: candidate.email,
+    //           id: candidate._id
+    //         }
+    //         const token = jwt.signin(payload, secret, {expiresIn: '15m '})
+    //         const link = `http://localhost:3000/reset-password/${User._id}/${token}`
+    //         console.log(link);
+    //         res.send('Password-reset in your email')
+    //       }else{
+    //         res.status(401).json({
+    //           massage: "Check your email, please!"
+    //       }) 
+    //     //   return;
+    //       }
+    //     }
+    // })
+      
+      
+      
+    //   app.get('/reset-password/:id/:token', (req, res, next) => {
+    //     const {id, token} = req.params
+        
+    //     if(candidate){
+    //        const secret =  JWT_secret + candidate.password 
+    //        try {
+    //         const payload =  jwt.verify(token, secret)
+      
+    //         res.render('reset-password', {email: candidate.email})
+    //        } catch (e) {
+    //         console.log('e')
+    //        }
+    //     }
+      
+    //   })
+      
+    //   app.post('/reset-password/:id/:token', (req, res, next) => {
+    //     const {id, token} = req.params
+    //     const { passport, password2 } = req.body; 
+         
+    //     if(id !== candidate._id){
+    //       res.send('Invalid id...')
+    //     //   return;
+    //     }
+      
+    //     const secret = JWT_secret + candidate.password 
+    //     try {
+    //       const payload =  jwt.verify(token, secret) 
+      
+    //       User.password = password;
+          
+      
+    //     } catch (e) {
+    //         console.log('e')
+    //     }
+    //   })
+      
+      
 
     // user.save().than(() => console.log('User has been created'))
 

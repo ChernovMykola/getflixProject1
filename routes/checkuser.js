@@ -7,5 +7,7 @@ router.post('/login', controller.login)
 
 router.post('/register', controller.register )
 
+// router.post('/newpassword', controller.newpass)
+
 
 module.exports = router

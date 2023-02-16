@@ -7,6 +7,12 @@ const cors = require('cors');
 const morgan = require('morgan');
 const authRoutes = require('./routes/checkuser');
 const path = require('path');
+const keys = require('./config/keys')
+const passport = require('passport')
+const jwt = require('jsonwebtoken')
+// const token = require('./controllers/checkuser')
+
+
 
 const port = 3000;
 const db = 'mongodb+srv://Registr:09022003Kolia@cluster0.jkxzeia.mongodb.net/?retryWrites=true&w=majority';
@@ -19,6 +25,11 @@ mongoose
 
 
 const createPath = (page) => path.resolve(__dirname, 'views', `${page}.html`);
+
+
+
+app.use(passport.initialize())
+require("./midleware/passport")(passport)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
