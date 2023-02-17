@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+/*import React, { lazy } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -8,13 +8,8 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { AuthProvider, useAuth } from "./commmon/auth";
-import ProfileProvider from "./commmon/profile-context";
-const Layout = lazy(() => import("./components/Layout"));
 import Loader from "./components/Loader";
-const Browse = lazy(() => import("./pages/Browse"));
 const Login = lazy(() => import("./pages/Login"));
-const Profile = lazy(() => import("./pages/Profile"));
 const Registration = lazy(() => import("./pages/Registration"));
 
 function ProtectedRoute({ children }: { children: React.ReactElement }) {
@@ -53,14 +48,6 @@ function AppRouter() {
           }
           errorElement={<RouteError />}
         >
-          <Route index element={<Profile />} />
-          <Route path="/manageProfiles" element={<Profile edit />} />
-          <Route path="/browse" element={<Layout />}>
-            <Route index element={<Browse />} />
-          </Route>
-          <Route path="/latest" element={<Layout />}>
-            <Route index element={<h1>latest</h1>} />
-          </Route>
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Registration />} />
@@ -79,9 +66,44 @@ function AppRouter() {
 export default function App() {
   return (
     <AuthProvider>
-      <ProfileProvider>
         <AppRouter />
-      </ProfileProvider>
     </AuthProvider>
   );
+}*/
+
+import React, { lazy } from "react";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Link,
+  Navigate,
+  Outlet,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import Loader from "./components/Loader";
+const Login = lazy(() => import("./pages/Login"));
+const Registration = lazy(() => import("./pages/Registration"));
+
+function AppRouter() {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Registration />} />
+      </>
+    )
+  );
+  return (
+    <RouterProvider router={router}></RouterProvider>
+  )
+}
+
+export default function App() {
+  return (
+    <AppRouter />
+  );
+
 }
