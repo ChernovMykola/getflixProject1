@@ -2,6 +2,8 @@ const bcrypt = require('bcryptjs')
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')
 const keys = require('../config/keys')
+const mailer =  require('../nodemaler')
+const { link } = require('fs')
 // const express = require('express');
 // const app = express();
 
@@ -24,13 +26,13 @@ module.exports.login = async function(req, res)  {
          }else{
             //password is not correcrly
             res.status(404).json({
-                massage: "Check your password please, please!"
+                massage: "Check your password, please!"
             })
          }
      }else{
         //we dont find user in db
         res.status(401).json({
-            massage: "Check your email please, please!"
+            massage: "Check your email, please!"
         })
      }
 }
@@ -66,6 +68,22 @@ module.exports.register = async function(req, res){
             massage: "Check your password, please!"
         })
     }
+    }
+
+    module.exports.restpass = async function(req, res){
+
+        const candidate = await User.findOne({email: req.body.email})
+        if(candidate){
+            const message = {
+                to: email,
+                subject: 'Change the password',
+                text: `You can go here and change the password: ${link}`
+            }
+            mailer(message)
+        }
+
+
+
     }
 
     // app.use(express.json())

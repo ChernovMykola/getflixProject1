@@ -10,6 +10,7 @@ const path = require('path');
 const keys = require('./config/keys')
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
+
 // const token = require('./controllers/checkuser')
 
 
@@ -28,8 +29,8 @@ const createPath = (page) => path.resolve(__dirname, 'views', `${page}.html`);
 
 
 
-app.use(passport.initialize())
-require("./midleware/passport")(passport)
+// app.use(passport.initialize())
+// require("./midleware/passport")(passport)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
