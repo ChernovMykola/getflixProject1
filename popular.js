@@ -27,7 +27,7 @@ mongoose
     url : String,
     releaseYear : Number,
     //trailer : String,//ne se trouve pas dans api
-    rating : Number,//ne se trouve pas dans api
+    //rating : Number,//ne se trouve pas dans api
       
  }) ;
 
