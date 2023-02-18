@@ -1,4 +1,3 @@
-
 const express = require('express');
 const axios = require('axios');
 const fs = require('fs');
@@ -28,7 +27,7 @@ mongoose
  }) ;
 
  
- const model = mongoose.model("Comedy",movieSchema);
+ const model = mongoose.model("Romance",movieSchema);
 
 const app = express();
 
@@ -42,7 +41,7 @@ app.get('/api/movies', (req, res) => {
         method: 'GET',
         url: 'https://netflix54.p.rapidapi.com/search/',
         params: {
-          query: 'comedy',
+          query: 'romance',
           offset: '0',
           limit_titles: '10',
           limit_suggestions: '1',
@@ -93,10 +92,10 @@ model.find((err, users) => {
     console.error(err);
   } else {
     
-    const comedyJSON = JSON.stringify(users);
+    const romanceJSON = JSON.stringify(users);
 
     
-    fs.writeFile('comedy.json', comedyJSON, 'utf8', (err) => {
+    fs.writeFile('romance.json', romanceJSON, 'utf8', (err) => {
       if (err) {
         console.error(err);
       } else {
@@ -105,6 +104,3 @@ model.find((err, users) => {
     });
   }
 });
-
-
-
