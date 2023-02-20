@@ -1,6 +1,6 @@
 import React, { FormEvent, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import netflixLogo from "../assets/logo.png";
+import logo from "../assets/netvibe_2-removebg-preview.png";
 
 
 export default function Registration() {
@@ -19,8 +19,8 @@ export default function Registration() {
 
   return (
     <>
-      <header className="relative z-[1] w-56">
-        <img className="h-full w-full" src={netflixLogo} alt="Netflix logo" />
+      <header className="relative z-[1] w-36">
+        <img className="h-full w-full" src={logo} alt="logo" />
       </header>
       <main>
         <section
@@ -60,7 +60,7 @@ export default function Registration() {
                 type="password"
                 name="password"
                 id="confirm_password"
-                placeholder="Conformation Password"
+                placeholder="Confirmation Password"
               />
               <button className="my-8 rounded-md bg-netflixRed p-2 font-semibold text-white outline-none">
                 Sign Up
