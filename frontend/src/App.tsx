@@ -87,6 +87,7 @@ const Email = lazy(() => import("./pages/Email"));
 const Forgot = lazy(() => import("./pages/Forgot"));
 const Registration = lazy(() => import("./pages/Registration"));
 const SignIn = lazy(() => import("./pages/SignIn"));
+const PlanPay = lazy(() => import("./pages/PlanPay"));
 
 function AppRouter() {
 
@@ -99,6 +100,7 @@ function AppRouter() {
         <Route path="/forgot" element={<Forgot />} />
         <Route path="/signup" element={<Registration />} />
         <Route path="/landing" element={<SignIn />} />
+        <Route path="/planpay" element={<PlanPay />} />
       </>
     )
   );
@@ -113,3 +115,5 @@ export default function App() {
   );
 
 }
+
+
