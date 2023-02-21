@@ -16,7 +16,9 @@ function PP() {
   }
 
   return (
+    <>
     <div className="p-4 max-w-screen-md mx-auto">
+      <h1 className="text-3xl font-bold mb-4 text-center">PLANS & PAYMENT</h1><br/>
       <h1 className="text-2xl font-bold mb-4">Choose your plan</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {plans.map((plan) => (
@@ -51,10 +53,44 @@ function PP() {
                 <p className="text-gray-500">{paymentMethod.description}</p>
               </div>
             ))}
+          </div><br/>
+          <div>
+          <h1 className="text-2xl font-bold mb-4">Enter card details</h1>
+          <form
+          onSubmit={()=> console.log("Hello")}
+          className="relative mx-auto w-[380px] rounded-lg bg-black/75 p-16"
+        >
+          <article className="text-gray-300">
+            <section className="mb-4 flex flex-col gap-4">
+              <input
+                className="rounded-md bg-zinc-500 p-2 outline-none"
+                type="tel"
+                name="number"
+                id="ccn"
+                inputMode='numeric'
+                pattern="[0-9\s]{13,19}"
+                autoComplete='cc-number'
+                placeholder="Enter card number"
+              />
+              <input
+                className="rounded-md bg-zinc-500 p-2 outline-none"
+                type="date"
+                name="date"
+                id="date"
+                placeholder="Enter card expiry"
+              />
+              <button className="my-8 rounded-md bg-netflixRed p-2 font-semibold text-white outline-none">
+                Submit
+              </button>
+            </section>
+          </article>
+        </form>
           </div>
         </div>
       )}
+
     </div>
+    </>
   );
 }
 

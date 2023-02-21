@@ -62,9 +62,11 @@ export default function Registration() {
                 id="confirm_password"
                 placeholder="Confirmation Password"
               />
+              <Link to="/planpay">
               <button className="my-8 rounded-md bg-netflixRed p-2 font-semibold text-white outline-none">
                 Sign Up
               </button>
+              </Link>
             </section>
             <p>
               Already have an account?{" "}
