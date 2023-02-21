@@ -44,7 +44,7 @@ const db = 'mongodb+srv://Registr:09022003Kolia@cluster0.jkxzeia.mongodb.net/?re
 mongoose.set('strictQuery', true);
 mongoose.connect(db);
 
-/*Pour créer les filtes il faut créer des schemas avec les mêmes nom que les tables existantes */
+/*Pour créer les filtres il faut créer des schemas avec les mêmes nom que les tables existantes */
 const modelcom = mongoose.model('Comedy', new mongoose.Schema({
       id: Number,
       title: String,

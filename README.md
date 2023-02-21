@@ -25,3 +25,8 @@
 
 ## - Voici l'avancé de notre projet
 https://trello.com/b/ZbHAIHug/getflix-project
+
+<br><br>
+
+
+![""](Untitled.png)
