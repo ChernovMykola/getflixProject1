@@ -8,12 +8,12 @@ export default function Email() {
 
      return (
         <>
-          <header className="relative z-[1] w-36">
+          <header className="relative z-[1] w-28">
             <img className="h-full w-full" src={logo} alt="logo" />
           </header>
           <main>
             <section
-              className={`absolute top-0 -z-[1] min-h-screen w-full bg-[url("/netflix_bg_img.png")] bg-cover`}
+              className={`absolute top-0 -z-[1] min-h-screen w-full bg-[url("/netbackground.png")] bg-cover`}
             ></section>
             <section className="absolute inset-0 bg-gradient-to-b from-zinc-900/50"></section>
             <form
