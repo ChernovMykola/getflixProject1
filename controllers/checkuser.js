@@ -70,21 +70,46 @@ module.exports.register = async function(req, res){
     }
     }
 
-    module.exports.restpass = async function(req, res){
-
-        const candidate = await User.findOne({email: req.body.email})
-        if(candidate){
-            const message = {
-                to: email,
-                subject: 'Change the password',
-                text: `You can go here and change the password: ${link}`
-            }
-            mailer(message)
-        }
 
 
 
-    }
+
+    // JWT_SECRET = "Itissecrettoken"
+
+    // module.exports.restpass = async function(req, res){
+
+    //     const candidate = await User.findOne({email: req.body.email})
+    //     const secret =  JWT_SECRET + candidate.password 
+    //     const tokenPass = jwt.sign({email: candidate.email, id: candidate._id}, secret, {expiresIn:'5m'})
+    //     const link = `http://localhost:3000/change_password/${candidate._id}/${tokenPass}`;
+    //     if(candidate){
+            // const message = {
+            //     to: email,
+            //     subject: 'Change the password',
+            //     text: `You can go here and change the password: ${link}`
+            // }
+            // mailer(message)
+    //     }
+
+    // }
+
+    // module.exports.newPass = async function(req, res){
+    //     const {id, token} = req.params;
+    //     const candidate = await User.findOne({_id:id})
+    //     if(!candidate){
+    //         res.status(409).json({
+    //             massage: "User not exists!"
+    //         })
+    //     }
+    //     const secret =  JWT_SECRET + candidate.password 
+    //     try {
+    //          const verify = jwt.verify(tokenPass, secret)
+    //          res.send('Verify ')
+    //     } catch (e) {
+    //         res.send('Not verify')
+    //     }
+    // }
+   
 
     // app.use(express.json())
     // app.use(express.urlencoded({extended: false}))
