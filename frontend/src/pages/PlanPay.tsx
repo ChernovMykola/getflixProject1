@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import logo from "../assets/netvibe_2-removebg-preview.png";
+import { Link, useNavigate } from "react-router-dom";
 import { Plan, plans } from "./Plans";
 import { PaymentMethod, paymentMethods } from "./PaymentMethods";
 
@@ -17,6 +19,9 @@ function PP() {
 
   return (
     <>
+    <header className="relative z-[1] w-28">
+        <img className="h-full w-full" src={logo} alt="logo" />
+    </header>
     <div className="p-4 max-w-screen-md mx-auto">
       <h1 className="text-3xl font-bold mb-4 text-center">PLANS & PAYMENT</h1><br/>
       <h1 className="text-2xl font-bold mb-4">Choose your plan</h1>
@@ -85,6 +90,12 @@ function PP() {
             </section>
           </article>
         </form>
+        <p>
+            HD (720p), Full HD (1080p), Ultra HD (4K) and HDR availability subject to your internet service and device capabilities. Not all content is available in all resolutions. To know more details about it, check by clicking {" "}
+              <Link to="" className="text-blue-500 hover:underline">
+                Terms of use.
+              </Link>
+            </p>
           </div>
         </div>
       )}
