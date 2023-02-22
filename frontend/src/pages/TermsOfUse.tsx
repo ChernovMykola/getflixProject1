@@ -18,7 +18,7 @@ export default function Terms() {
   </div>
 </div>
           <div className="p-2 max-w-screen mx-auto">
-          <h1 className="text-3xl-md font-bold mb-4 text-center">Netvibe Terms of Use</h1>
+          <h1 className="text-3xl font-bold mb-4 text-center">Netvibe Terms of Use</h1>
           <p>
           Netvibe provides a personalized subscription service that allows our members to access entertainment content ("Netvibe content") over the Internet on certain Internet-connected TVs, computers and other devices ("Netvibe ready devices")</p>.
 

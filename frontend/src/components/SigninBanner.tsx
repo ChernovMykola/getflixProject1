@@ -32,7 +32,7 @@ function SigninBanner({}: Props) {
         </div>
         <div className="h-[55vh] sm:h-[80vh] w-[90%] md:w-[80%] mx-[5%] md:mx-[10%] flex flex-col items-center justify-center text-white text-center">
           <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl sm:px-[15%] md:px-[15%] lg:mx-14 lg:px-[7%] xl:px-[15%] font-medium">
-            NETVIBE presents all exclusive movies..
+          NETVIBE presents all exclusive movies..
           </h1>
           <h2 className="text-lg sm:text-1xl lg:text-2xl font-medium m-2 sm:m-4">
             Watch anywhere. Cancel anytime.

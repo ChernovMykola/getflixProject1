@@ -88,6 +88,7 @@ const Forgot = lazy(() => import("./pages/Forgot"));
 const Registration = lazy(() => import("./pages/Registration"));
 const PlanPay = lazy(() => import("./pages/PlanPay"));
 const TermsOfUse = lazy(() => import("./pages/TermsOfUse"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const SignIn = lazy(() => import("./components/SignIn"));
 
 function AppRouter() {
@@ -102,6 +103,7 @@ function AppRouter() {
         <Route path="/signup" element={<Registration />} />
         <Route path="/planpay" element={<PlanPay />} />
         <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/landing" element={<SignIn />} />
       </>
     )

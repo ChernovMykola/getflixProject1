@@ -40,6 +40,7 @@ export default function Registration() {
                 name="name"
                 id="name"
                 placeholder="Enter name"
+                required
               />
               <input
                 className="rounded-md bg-zinc-500 p-2 outline-none"
@@ -47,6 +48,7 @@ export default function Registration() {
                 name="email"
                 id="email"
                 placeholder="Enter email"
+                required
               />
               <input
                 className="rounded-md bg-zinc-500 p-2 outline-none"
@@ -54,6 +56,7 @@ export default function Registration() {
                 name="password"
                 id="password"
                 placeholder="Enter password"
+                required
               />
               <input
                 className="rounded-md bg-zinc-500 p-2 outline-none"
@@ -61,7 +64,14 @@ export default function Registration() {
                 name="password"
                 id="confirm_password"
                 placeholder="Confirmation Password"
+                required
               />
+              <p>
+           I accept to the{" "}
+              <Link to="/privacy" className="text-blue-500 hover:underline">
+                Privacy Policy
+              </Link>
+            </p>
               <div className="flex justify-center items-center">
               <Link to="/planpay">
               <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
