@@ -81,6 +81,9 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import HomeScreen from "./pages/HomeScreen";
+import NotFound from "./components/NotFound";
+import PopularMovies from "./components/PopularMovies";
 
 const Login = lazy(() => import("./pages/Login"));
 const Email = lazy(() => import("./pages/Email"));
@@ -95,7 +98,7 @@ function AppRouter() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-
+    
         <Route path="/login" element={<Login />} />
         <Route path="/email" element={<Email />} />
         <Route path="/forgot" element={<Forgot />} />
@@ -103,6 +106,10 @@ function AppRouter() {
         <Route path="/planpay" element={<PlanPay />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="/landing" element={<SignIn />} />
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="*" element={<NotFound />} />
+        
+   
       </>
     )
   );
