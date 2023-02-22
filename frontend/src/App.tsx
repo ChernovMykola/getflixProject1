@@ -81,9 +81,14 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import Loader from "./components/Loader";
+
 const Login = lazy(() => import("./pages/Login"));
+const Email = lazy(() => import("./pages/Email"));
+const Forgot = lazy(() => import("./pages/Forgot"));
 const Registration = lazy(() => import("./pages/Registration"));
+const PlanPay = lazy(() => import("./pages/PlanPay"));
+const TermsOfUse = lazy(() => import("./pages/TermsOfUse"));
+const SignIn = lazy(() => import("./components/SignIn"));
 
 function AppRouter() {
 
@@ -92,7 +97,12 @@ function AppRouter() {
       <>
 
         <Route path="/login" element={<Login />} />
+        <Route path="/email" element={<Email />} />
+        <Route path="/forgot" element={<Forgot />} />
         <Route path="/signup" element={<Registration />} />
+        <Route path="/planpay" element={<PlanPay />} />
+        <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/landing" element={<SignIn />} />
       </>
     )
   );
@@ -107,3 +117,5 @@ export default function App() {
   );
 
 }
+
+

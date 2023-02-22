@@ -1,6 +1,6 @@
 import React, { FormEvent, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import netflixLogo from "../assets/logo.png";
+import logo from "../assets/netvibe_2-removebg-preview.png";
 
 
 export default function Registration() {
@@ -19,12 +19,12 @@ export default function Registration() {
 
   return (
     <>
-      <header className="relative z-[1] w-56">
-        <img className="h-full w-full" src={netflixLogo} alt="Netflix logo" />
+      <header className="relative z-[1] w-28">
+        <img className="h-full w-full" src={logo} alt="logo" />
       </header>
       <main>
         <section
-          className={`absolute top-0 -z-[1] min-h-screen w-full bg-[url("/netflix_bg_img.png")] bg-cover`}
+          className={`absolute top-0 -z-[1] min-h-screen w-full bg-[url("/bg1.png")] bg-cover`}
         ></section>
         <section className="absolute inset-0 bg-gradient-to-b from-zinc-900/50"></section>
         <form
@@ -60,11 +60,15 @@ export default function Registration() {
                 type="password"
                 name="password"
                 id="confirm_password"
-                placeholder="Conformation Password"
+                placeholder="Confirmation Password"
               />
-              <button className="my-8 rounded-md bg-netflixRed p-2 font-semibold text-white outline-none">
+              <div className="flex justify-center items-center">
+              <Link to="/planpay">
+              <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                 Sign Up
               </button>
+              </Link>
+              </div>
             </section>
             <p>
               Already have an account?{" "}
