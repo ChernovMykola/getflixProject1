@@ -40,33 +40,42 @@ const Footer: React.FC<FooterProps> = () => {
         {
         title: "Top Categories",
         links: [
-            {
+          {
+            name: "Popular Movies",
+            link: "#",
+            },
+            
+          {
+            name: "Comedy",
+            link: "#",
+              },
+          {
             name: "Action",
             link: "#",
             },
-
-            {
-            name: "Romantic",
+          {
+            name: "Romance",
             link: "#",
             },
-            {
-            name: "Drama",
+          {
+            name: "Thriller",
             link: "#",
             },
-            {
-            name: "Historical",
+          {
+            name: "Horror",
             link: "#",
             },
+          {
+            name: "Kids",
+            link: "#",
+            },
+          
         ],
         },
         {
         title: "My Account",
         links: [
-            {
-            name: "Dashboard",
-            link: "/dashboard",
-            },
-
+            
             {
             name: "My Favorites",
             link: "/favorite",

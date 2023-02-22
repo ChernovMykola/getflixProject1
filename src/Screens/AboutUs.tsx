@@ -1,10 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-interface AboutUsProps {}
+function AboutUs() {
+  return (
+    <div>AboutUs</div>
+  )
+}
 
-const AboutUs: React.FC<AboutUsProps> = () => {
-  return <div>About Us</div>;
-};
-
-export default AboutUs;
-
+export default AboutUs
