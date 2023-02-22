@@ -10,6 +10,9 @@ const path = require('path');
 const keys = require('./config/keys')
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
+const actionRoute = require('./routes/actionRoute');
+const actionController = require('./controllers/actionCont');
+
 
 // const token = require('./controllers/checkuser')
 
@@ -39,6 +42,9 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(cors())
+
+app.use('/db/populate/movies', actionRoute);
+app.get('/api/movies', actionController.getMovies);
 
 
 app.use('/api/auth', authRoutes)
