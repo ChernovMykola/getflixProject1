@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Banner from '../Components/Home/Banner';
+
 import PopularMovies from '../Components/Home/PopularMovies';
 
 import Layout from '../Layout/Layout';
@@ -12,7 +12,7 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
     <Layout>
     
     <div className="container mx-auto min-h-screen px-2 mb-6">
-      <Banner />
+      
       <PopularMovies />
       
       

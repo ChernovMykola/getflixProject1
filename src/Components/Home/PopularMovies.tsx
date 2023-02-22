@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Data/popular.js'
+
 import { BsCollectionFill } from 'react-icons/bs';
 
 
