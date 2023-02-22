@@ -30,11 +30,13 @@ export default function Email() {
                     id="email"
                     placeholder="Enter email"
                   />
+                  <div className="flex justify-center items-center">
                   <Link to="/forgot">
-                    <button className="my-8 rounded-md bg-netflixRed p-2 font-semibold text-white outline-none">
+                    <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                         Submit
                     </button>
                  </Link>
+                 </div>
                 </section>
               </article>
             </form>

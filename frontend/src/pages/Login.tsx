@@ -24,7 +24,7 @@ export default function Login() {
 
   return (
     <>
-      <header className="relative z-[1] w-28">
+      <header className="relative z-[1] w-36">
         <img className="h-full w-full" src={logo} alt="logo" />
       </header>
       <main>
@@ -56,7 +56,7 @@ export default function Login() {
               <Link to="/email" className="text-white hover:underline">
                 Forgot Password?
               </Link>
-              <button className="my-8 rounded-md bg-netflixRed p-2 font-semibold text-white outline-none">
+              <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                 Log In
               </button>
             </section>

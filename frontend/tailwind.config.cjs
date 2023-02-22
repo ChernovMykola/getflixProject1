@@ -7,6 +7,7 @@ module.exports = {
         colors: {
           dark: "hsl(0deg 0% 8%)",
           netflixRed: "hsl(357deg 92% 47%)",
+          subMain:'#9A48FF',
         },
         animation: {
           "slide-rtl": "slide-rtl .4s ease-in-out",

@@ -37,11 +37,13 @@ export default function Forgot() {
                     id="cpassword"
                     placeholder="Confirm new password"
                   />
+                  <div className="flex justify-center items-center">
                   <Link to="/signup">
-                  <button className="my-8 rounded-md bg-netflixRed p-2 font-semibold text-white outline-none">
+                  <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                     Submit
                   </button>
                   </Link>
+                  </div>
                 </section>
               </article>
             </form>

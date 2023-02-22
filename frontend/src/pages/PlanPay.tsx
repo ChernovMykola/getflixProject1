@@ -30,7 +30,7 @@ function PP() {
           <div
             key={plan.id}
             className={`border p-4 rounded-lg cursor-pointer ${
-              selectedPlan?.id === plan.id ? "border-indigo-500" : "border-gray-200"
+              selectedPlan?.id === plan.id ? "border-subMain" : "border-gray-200"
             }`}
             onClick={() => handlePlanSelect(plan)}
           >
@@ -49,7 +49,7 @@ function PP() {
                 key={paymentMethod.id}
                 className={`border p-4 rounded-lg cursor-pointer ${
                   selectedPaymentMethod?.id === paymentMethod.id
-                    ? "border-indigo-500"
+                    ? "border-subMain"
                     : "border-gray-200"
                 }`}
                 onClick={() => handlePaymentMethodSelect(paymentMethod)}
@@ -76,6 +76,7 @@ function PP() {
                 pattern="[0-9\s]{13,19}"
                 autoComplete='cc-number'
                 placeholder="Enter card number"
+                required
               />
               <input
                 className="rounded-md bg-zinc-500 p-2 outline-none"
@@ -83,8 +84,9 @@ function PP() {
                 name="date"
                 id="date"
                 placeholder="Enter card expiry"
+                required
               />
-              <button className="my-8 rounded-md bg-netflixRed p-2 font-semibold text-white outline-none">
+              <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                 Submit
               </button>
             </section>
@@ -92,7 +94,7 @@ function PP() {
         </form>
         <p>
             HD (720p), Full HD (1080p), Ultra HD (4K) and HDR availability subject to your internet service and device capabilities. Not all content is available in all resolutions. To know more details about it, check by clicking {" "}
-              <Link to="" className="text-blue-500 hover:underline">
+              <Link to="/terms" className="text-blue-500 hover:underline">
                 Terms of use.
               </Link>
             </p>
