@@ -20,3 +20,27 @@ res.render('Home', {
 key: Publishable_Key
 })
 })
+
+app.post('/payment', function(req, res){
+ 
+
+    stripe.customers.create({
+    email: req.body.stripeEmail,
+    source: req.body.stripeToken,
+    })
+    .then((customer) => {
+     
+    return stripe.charges.create({
+    amount: req.body.sum, 
+    description: 'subscription',
+    currency: 'USD',
+    customer: customer.id
+    });
+    })
+    .then((charge) => {
+    res.send("Success") 
+    })
+    .catch((err) => {
+    res.send(err) 
+    });
+    })
