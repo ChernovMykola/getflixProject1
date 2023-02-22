@@ -23,7 +23,7 @@
 ## - Ce que l'utilisateur a besoin de savoir
 1. L'utilisateur aura besoin d'installer des packages en utilisant la commande "npm install".
 
-## - Voici l'avancé de notre projet
+## - Voici l'avancée de notre projet
 https://trello.com/b/ZbHAIHug/getflix-project
 
 <br><br>
