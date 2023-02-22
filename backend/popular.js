@@ -86,7 +86,7 @@ axios.request(options).then(function (response) {
     model.insertMany(movies)
       .then(() => {
         console.log("Inserted");
-        res.status(200).send(response.data);
+        res.status(200).send({movies: response.data});
       })
       .catch((err) => {
         console.error(err);

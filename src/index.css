@@ -41,3 +41,15 @@ select:focus{
 .zIndex {
     z-index: 1000;
 }
+
+.row-container:hover .opacity-0 {
+    opacity: theme("opacity.100");
+  }
+
+  *{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
