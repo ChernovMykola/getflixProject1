@@ -24,12 +24,14 @@ export default function Login() {
 
   return (
     <>
+    <Link to="/landing">
       <header className="relative z-[1] w-36">
         <img className="h-full w-full" src={logo} alt="logo" />
       </header>
+      </Link>
       <main>
         <section
-          className={`absolute top-0 -z-[1] min-h-screen w-full bg-[url("/netbackground.png")] bg-cover`}
+          className={`absolute top-0 -z-[1] min-h-screen w-full bg-[url("/netbackground.png")] bg-cover bg-black bg-opacity-70 h-[100vh] `}
         ></section>
         <section className="absolute inset-0 bg-gradient-to-b from-zinc-900/50"></section>
         <form
@@ -45,6 +47,7 @@ export default function Login() {
                 name="email"
                 id="email"
                 placeholder="Enter email"
+                required
               />
               <input
                 className="rounded-md bg-zinc-500 p-2 outline-none"
@@ -52,6 +55,7 @@ export default function Login() {
                 name="password"
                 id="password"
                 placeholder="Enter password"
+                required
               />
               <Link to="/email" className="text-white hover:underline">
                 Forgot Password?

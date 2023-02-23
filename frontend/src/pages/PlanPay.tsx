@@ -19,9 +19,11 @@ function PP() {
 
   return (
     <>
+    <Link to="/landing">
     <header className="relative z-[1] w-28">
         <img className="h-full w-full" src={logo} alt="logo" />
     </header>
+    </Link>
     <div className="p-4 max-w-screen-md mx-auto">
       <h1 className="text-3xl font-bold mb-4 text-center">PLANS & PAYMENT</h1><br/>
       <h1 className="text-2xl font-bold mb-4">Choose your plan</h1>

@@ -85,13 +85,14 @@ import HomeScreen from "./pages/HomeScreen";
 import NotFound from "./components/NotFound";
 import PopularMovies from "./components/PopularMovies";
 
-const Login = lazy(() => import("./pages/Login"));
-const Email = lazy(() => import("./pages/Email"));
-const Forgot = lazy(() => import("./pages/Forgot"));
-const Registration = lazy(() => import("./pages/Registration"));
-const PlanPay = lazy(() => import("./pages/PlanPay"));
-const TermsOfUse = lazy(() => import("./pages/TermsOfUse"));
-const SignIn = lazy(() => import("./components/SignIn"));
+import Login from "./pages/Login";
+import Forgot from "./pages/Forgot";
+import Registration from "./pages/Registration";
+import PlanPay from "./pages/PlanPay";
+import TermsOfUse from "./pages/TermsOfUse";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import SignIn from "./components/SignIn";
+import Email from "./pages/Email";
 
 function AppRouter() {
 
@@ -105,6 +106,7 @@ function AppRouter() {
         <Route path="/signup" element={<Registration />} />
         <Route path="/planpay" element={<PlanPay />} />
         <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/landing" element={<SignIn />} />
         <Route path="/" element={<HomeScreen />} />
         <Route path="*" element={<NotFound />} />
