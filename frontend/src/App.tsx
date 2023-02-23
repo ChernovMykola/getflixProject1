@@ -94,6 +94,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import SignIn from "./components/SignIn";
 import Email from "./pages/Email";
 
+
+
 function AppRouter() {
 
   const router = createBrowserRouter(
@@ -108,7 +110,7 @@ function AppRouter() {
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/landing" element={<SignIn />} />
-        <Route path="/" element={<HomeScreen />} />
+        <Route path="/homescreen" element={<HomeScreen />} />
         <Route path="*" element={<NotFound />} />
         
    

@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaSearch,FaHeart } from "react-icons/fa";
 import { CgUser } from "react-icons/cg";
+import logo from "../../assets/netvibe_2-removebg-preview.png";
 
 
 interface NavBarProps {}
@@ -20,7 +21,7 @@ const NavBar: React.FC<NavBarProps> = () => {
           <div className="col-span-1 lg:block hidden">
             <Link to="/">
               <img
-                src="/images/Logo.png/"
+                src={logo}
                 alt="logo"
                 className="w-full h-16 object-contain"
               />
