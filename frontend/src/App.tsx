@@ -82,14 +82,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-const Login = lazy(() => import("./pages/Login"));
-const Email = lazy(() => import("./pages/Email"));
-const Forgot = lazy(() => import("./pages/Forgot"));
-const Registration = lazy(() => import("./pages/Registration"));
-const PlanPay = lazy(() => import("./pages/PlanPay"));
-const TermsOfUse = lazy(() => import("./pages/TermsOfUse"));
-const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const SignIn = lazy(() => import("./components/SignIn"));
+import Login from "./pages/Login";
+import Forgot from "./pages/Forgot";
+import Registration from "./pages/Registration";
+import PlanPay from "./pages/PlanPay";
+import TermsOfUse from "./pages/TermsOfUse";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import SignIn from "./components/SignIn";
+import Email from "./pages/Email";
 
 function AppRouter() {
 

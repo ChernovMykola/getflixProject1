@@ -8,9 +8,11 @@ export default function Email() {
 
      return (
         <>
+        <Link to="/landing">
           <header className="relative z-[1] w-28">
             <img className="h-full w-full" src={logo} alt="logo" />
           </header>
+          </Link>
           <main>
             <section
               className={`absolute top-0 -z-[1] min-h-screen w-full bg-[url("/netbackground.png")] bg-cover`}
@@ -29,6 +31,7 @@ export default function Email() {
                     name="email"
                     id="email"
                     placeholder="Enter email"
+                    required
                   />
                   <div className="flex justify-center items-center">
                   <Link to="/forgot">

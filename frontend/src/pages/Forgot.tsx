@@ -8,9 +8,11 @@ export default function Forgot() {
 
      return (
         <>
+        <Link to="/landing">
           <header className="relative z-[1] w-28">
             <img className="h-full w-full" src={logo} alt="logo" />
           </header>
+          </Link>
           <main>
             <section
               className={`absolute top-0 -z-[1] min-h-screen w-full bg-[url("/netbackground.png")] bg-cover`}
@@ -29,6 +31,7 @@ export default function Forgot() {
                     name="password"
                     id="password"
                     placeholder="Enter new password"
+                    required
                   />
                   <input
                     className="rounded-md bg-zinc-500 p-2 outline-none"
@@ -36,6 +39,7 @@ export default function Forgot() {
                     name="cpassword"
                     id="cpassword"
                     placeholder="Confirm new password"
+                    required
                   />
                   <div className="flex justify-center items-center">
                   <Link to="/signup">
