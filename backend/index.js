@@ -40,6 +40,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(cors())
 
+app.get('/api/movies', actionController.getMovies);
 
 app.use('/api/auth', authRoutes)
 app.listen(port, () => {

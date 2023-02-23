@@ -2,19 +2,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import PopularMovies from "../components/PopularMovies;
 
 import Layout from "../components/Layout/Layout";
+import PopularMovies from "../components/PopularMovies";
 
 interface HomeScreenProps {}
 
 const HomeScreen: React.FC<HomeScreenProps> = () => {
   const [movies, setMovies] = useState([]);
-
-  useEffect(async () => {
+  const fetchfilm = async ()=>{
     const result = await axios("http://localhost:3000/api/movies");
     console.log(result.data.movies);
     setMovies(result.data.movies);
+  }
+  useEffect(() => {
+    fetchfilm();
   }, []);
 
   return (
