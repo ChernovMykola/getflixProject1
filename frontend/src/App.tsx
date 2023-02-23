@@ -82,6 +82,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import Axios from "axios";
+
 import Login from "./pages/Login";
 import Forgot from "./pages/Forgot";
 import Registration from "./pages/Registration";
