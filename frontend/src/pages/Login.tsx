@@ -1,33 +1,38 @@
-import React, { FormEvent, useEffect } from "react";
+import React, { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios"; // import axios library
+
 import logo from "../assets/netvibe_2-removebg-preview.png";
 
-
 export default function Login() {
- // const { signIn, user } = useAuth() as AuthContextType;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  /*useEffect(() => {
-    if (user) {
-      navigate("/");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // prevent default form submission behavior
+
+    try {
+      // send a POST request to the backend's login endpoint with the email and password fields
+      const response = await axios.post("http://localhost:3000/api/auth/login", { email, password });
+
+      // if the request succeeds, store the JWT token in localStorage and navigate to the landing page
+      localStorage.setItem("token", response.data.token);
+      navigate("/landing");
+    } catch (error) {
+      // if the request fails, log the error to the console and display an error message to the user
+      console.error(error);
+      alert("Login failed! Please check your email and password and try again.");
     }
-  }, [user]);*/
-
-  /*async function authenticateUser(event: React.SyntheticEvent) {
-  event.preventDefault();
-    const { email, password } = event.target as typeof event.target & {
-      email: HTMLInputElement;
-      password: HTMLInputElement;
-    };
-    await signIn(email.value, password.value);
-  }*/
+  };
 
   return (
     <>
-    <Link to="/landing">
-      <header className="relative z-[1] w-36">
-        <img className="h-full w-full" src={logo} alt="logo" />
-      </header>
+      <Link to="/landing">
+        <header className="relative z-[1] w-36">
+          <img className="h-full w-full" src={logo} alt="logo" />
+        </header>
       </Link>
       <main>
         <section
@@ -35,7 +40,7 @@ export default function Login() {
         ></section>
         <section className="absolute inset-0 bg-gradient-to-b from-zinc-900/50"></section>
         <form
-          onSubmit={()=> console.log("Hello")}
+          onSubmit={handleSubmit}
           className="relative mx-auto w-[380px] rounded-lg bg-black/75 p-16"
         >
           <article className="text-gray-300">
@@ -47,6 +52,8 @@ export default function Login() {
                 name="email"
                 id="email"
                 placeholder="Enter email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
                 required
               />
               <input
@@ -55,8 +62,11 @@ export default function Login() {
                 name="password"
                 id="password"
                 placeholder="Enter password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
                 required
               />
+
               <Link to="/email" className="text-white hover:underline">
                 Forgot Password?
               </Link>

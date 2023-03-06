@@ -28,7 +28,7 @@ mongoose
     .catch((error) => console.log('error'));
 
 
-const createPath = (page) => path.resolve(__dirname, 'views', `${page}.html`);
+const createPath = (page) => path.resolve(__dirname, 'views', `${page}.html)`);
 
 
 

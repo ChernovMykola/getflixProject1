@@ -88,9 +88,13 @@ function PP() {
                 placeholder="Enter card expiry"
                 required
               />
+              <div className="flex justify-center items-center">
+              <Link to="/homescreen">
               <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
-                Submit
+                Sign Up
               </button>
+              </Link>
+              </div>
             </section>
           </article>
         </form>

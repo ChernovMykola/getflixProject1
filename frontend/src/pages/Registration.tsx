@@ -1,28 +1,37 @@
-import React, { FormEvent, useEffect } from "react";
+import React, { FormEvent, useState } from "react";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/netvibe_2-removebg-preview.png";
 
-
 export default function Registration() {
-  //const { signUp } = useAuth() as AuthContextType;
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
- /* async function registerUser(event: React.SyntheticEvent) {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const { email, password } = event.target as typeof event.target & {
-      email: HTMLInputElement;
-      password: HTMLInputElement;
-    };
-    await signUp(email.value, password.value);
-    navigate("/login");
-  }*/
+    try {
+      const response = await axios.post("http://localhost:3000/api/auth/register", {
+        name,
+        email,
+        password,
+        passwordConfirmation,
+      });
+      console.log(response.data);
+      navigate("/login");
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <>
-    <Link to="/landing">
-      <header className="relative z-[1] w-28">
-        <img className="h-full w-full" src={logo} alt="logo" />
-      </header>
+      <Link to="/landing">
+        <header className="relative z-[1] w-28">
+          <img className="h-full w-full" src={logo} alt="logo" />
+        </header>
       </Link>
       <main>
         <section
@@ -30,19 +39,21 @@ export default function Registration() {
         ></section>
         <section className="absolute inset-0 bg-gradient-to-b from-zinc-900/50"></section>
         <form
-          onSubmit={()=> console.log("Hello")}
+          onSubmit={handleSubmit}
           className="relative mx-auto w-[380px] rounded-lg bg-black/75 p-16"
         >
           <article className="text-gray-300">
             <h1 className="mb-8 text-center text-4xl text-white">Sign Up</h1>
             <section className="mb-4 flex flex-col gap-4">
-            <input
+              <input
                 className="rounded-md bg-zinc-500 p-2 outline-none"
                 type="name"
                 name="name"
                 id="name"
                 placeholder="Enter name"
                 required
+                value={name}
+                onChange={(event) => setName(event.target.value)}
               />
               <input
                 className="rounded-md bg-zinc-500 p-2 outline-none"
@@ -51,6 +62,8 @@ export default function Registration() {
                 id="email"
                 placeholder="Enter email"
                 required
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
               />
               <input
                 className="rounded-md bg-zinc-500 p-2 outline-none"
@@ -59,14 +72,18 @@ export default function Registration() {
                 id="password"
                 placeholder="Enter password"
                 required
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
               />
               <input
                 className="rounded-md bg-zinc-500 p-2 outline-none"
                 type="password"
                 name="password"
-                id="confirm_password"
+                id="confirmpassword"
                 placeholder="Confirmation Password"
                 required
+                value={password}
+                onChange={(event) => setPasswordConfirmation(event.target.value)}
               />
               <p>
            I accept to the{" "}
@@ -94,3 +111,4 @@ export default function Registration() {
     </>
   );
 }
+
