@@ -34,7 +34,7 @@ const createPath = (page) => path.resolve(__dirname, 'views', `${page}.html`);
 
 // app.use(passport.initialize())
 // require("./midleware/passport")(passport)
-
+//npm run dev
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
