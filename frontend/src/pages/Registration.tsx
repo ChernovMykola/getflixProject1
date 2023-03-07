@@ -23,6 +23,7 @@ export default function Registration() {
       navigate("/login");
     } catch (error) {
       console.error(error);
+      alert("Registration failed! Please check your email and password and try again.");
     }
   }
 

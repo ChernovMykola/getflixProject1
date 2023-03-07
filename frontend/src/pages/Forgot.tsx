@@ -42,7 +42,7 @@ export default function Forgot() {
                     required
                   />
                   <div className="flex justify-center items-center">
-                  <Link to="/signup">
+                  <Link to="/login">
                   <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                     Submit
                   </button>

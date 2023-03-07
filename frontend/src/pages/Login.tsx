@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"; // import axios library
-
+import login from "../../backend/controllers/checkuser.js";
 import logo from "../assets/netvibe_2-removebg-preview.png";
 
 export default function Login() {
@@ -67,16 +67,20 @@ export default function Login() {
                 required
               />
 
-              <Link to="/email" className="text-white hover:underline">
+              <Link to="/forgotpassword" className="text-white hover:underline">
                 Forgot Password?
               </Link>
+              <div className="flex justify-center items-center">
+              <Link to="/homescreen">
               <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                 Log In
               </button>
+              </Link>
+              </div>
             </section>
             <p>
               New to NetVibe?{" "}
-              <Link to="/signup" className="text-white hover:underline">
+              <Link to="/register" className="text-white hover:underline">
                 Sign Up
               </Link>
             </p>

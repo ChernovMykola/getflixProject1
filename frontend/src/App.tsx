@@ -19,7 +19,7 @@ import PlanPay from "./pages/PlanPay";
 import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import SignIn from "./components/SignIn";
-import Email from "./pages/Email";
+import Forgotpassword from "./pages/Forgotpassword";
 
 
 
@@ -29,10 +29,10 @@ function AppRouter() {
     createRoutesFromElements(
       <>
     
-        <Route path="/login" element={<Login />} />
-        <Route path="/email" element={<Email />} />
+        <Route path="/api/auth/login" element={<Login />} />
+        <Route path="/api/auth/forgotpassword" element={<Forgotpassword />} />
         <Route path="/forgot" element={<Forgot />} />
-        <Route path="/signup" element={<Registration />} />
+        <Route path="/api/auth/register" element={<Registration />} />
         <Route path="/planpay" element={<PlanPay />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
