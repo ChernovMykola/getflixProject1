@@ -7,7 +7,8 @@ JWT_SECRET = "Itissecrettoken"
 const User = require('../models/user')
 const status = require('statuses')
 const nodemailer = require('nodemailer')
-
+// const env = require('env-cmd')
+const env = require('dotenv').config();
 
 router.post('/login', controller.login)
 
