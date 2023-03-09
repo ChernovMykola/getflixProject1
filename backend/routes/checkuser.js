@@ -62,8 +62,9 @@ router.post('/forgotpassword', async (req, res)=>{
         
     }
 })
+// change_password це урла і має бути така сторінка, там фронт витягує id tokenpass і відправляє на форгет пассворд якщо все норм людинна водить пароль
 
-
+//сюди відправити запит з id та tokenpass 
 router.get("/reset-password/:id/:tokenPass", async(req, res) => {
     const {id, tokenPass} = req.params;
     console.log(req.params);
@@ -80,7 +81,7 @@ router.get("/reset-password/:id/:tokenPass", async(req, res) => {
     }
     res.send('Done') 
 })
-
+//сюди відправити новий пароль і конфірм
 router.post("/reset-password/:id/:tokenPass", async(req, res) => {
     const {id, tokenPass} = req.params;
     const  {newpassword} = req.body.newpassword;
