@@ -1,10 +1,27 @@
-import React, { FormEvent, useEffect } from "react";
+import React, { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/netvibe_2-removebg-preview.png";
+import axios from "axios";
 
 export default function Email() {
     // const { signIn, user } = useAuth() as AuthContextType;
-     const navigate = useNavigate()
+     const navigate = useNavigate();
+
+     const [email, setEmail] = useState("");
+
+     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      try {
+        const response = await axios.post("http://localhost:3000/api/auth/forgotpassword", {
+          email,
+        });
+        console.log(response.data);
+        navigate("/");
+      } catch (error) {
+        console.error(error);
+        alert("Email does not exist.");
+      }
+    }
 
      return (
         <>
@@ -19,7 +36,7 @@ export default function Email() {
             ></section>
             <section className="absolute inset-0 bg-gradient-to-b from-zinc-900/50"></section>
             <form
-              onSubmit={()=> console.log("Hello")}
+              onSubmit={handleSubmit}
               className="relative mx-auto w-[380px] rounded-lg bg-black/75 p-16"
             >
               <article className="text-gray-300">
@@ -32,13 +49,15 @@ export default function Email() {
                     id="email"
                     placeholder="Enter email"
                     required
+                    value={email}
+                onChange={(event) => setEmail(event.target.value)}
                   />
                   <div className="flex justify-center items-center">
-                  <Link to="/forgot">
+                  
                     <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                         Submit
                     </button>
-                 </Link>
+                 
                  </div>
                 </section>
               </article>

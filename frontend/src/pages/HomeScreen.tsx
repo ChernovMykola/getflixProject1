@@ -21,7 +21,17 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
   return (
     <Layout >
       <div className="container mx-auto min-h-screen px-2 mb-6">
-        <pre>{JSON.stringify(movies, null, 2)}</pre> <PopularMovies />
+        {movies.map((movie) =>
+           (
+
+            < div key={movie.id}>
+           <p>{movie.title}</p>
+           <img src={movie.url} />
+
+           </div>
+           )
+        
+        )}
       </div>
     </Layout>
   );

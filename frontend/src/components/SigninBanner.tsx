@@ -17,13 +17,13 @@ function SigninBanner({}: Props) {
             alt="logo"
           /></Link>
           <div className="flex mr-4 sm:mr-10">
-          <Link to="/login">
+          <Link to="/api/auth/login">
           <button
               className="h-8 px-1 sm:px-4 m-2 text-white bg-subMain rounded hover:subMain">
               Log In
             </button>
             </Link>
-            <Link to="/signup">
+            <Link to="/api/auth/register">
             <button
               className="h-8 px-1 sm:px-4 m-2 text-white bg-subMain rounded hover:bg-subMain">
               Sign up
@@ -42,7 +42,7 @@ function SigninBanner({}: Props) {
             Ready to watch? Click on the button below to become a member.
           </p><br/>
           <div className="flex flex-col md:flex-row justify-center">
-          <Link to="/signup">
+          <Link to="/api/auth/register">
             <button className="flex self-center w-32 md:w-52 items-center bg-subMain hover:subMain pl-4 md:pl-7 h-10 md:h-14 xl:h-16 m-2 md:m-0 md:text-2xl rounded">
               Get Started
             </button>

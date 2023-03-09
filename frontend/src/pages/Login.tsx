@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"; // import axios library
-import login from "../../backend/controllers/checkuser.js";
+
 import logo from "../assets/netvibe_2-removebg-preview.png";
 
 export default function Login() {
@@ -19,7 +19,7 @@ export default function Login() {
 
       // if the request succeeds, store the JWT token in localStorage and navigate to the landing page
       localStorage.setItem("token", response.data.token);
-      navigate("/landing");
+      navigate("/homescreen");
     } catch (error) {
       // if the request fails, log the error to the console and display an error message to the user
       console.error(error);
@@ -67,20 +67,20 @@ export default function Login() {
                 required
               />
 
-              <Link to="/forgotpassword" className="text-white hover:underline">
+              <Link to="/api/auth/forgotpassword" className="text-white hover:underline">
                 Forgot Password?
               </Link>
               <div className="flex justify-center items-center">
-              <Link to="/homescreen">
+              
               <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                 Log In
               </button>
-              </Link>
+              
               </div>
             </section>
             <p>
               New to NetVibe?{" "}
-              <Link to="/register" className="text-white hover:underline">
+              <Link to="/api/auth/register" className="text-white hover:underline">
                 Sign Up
               </Link>
             </p>

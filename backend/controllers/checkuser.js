@@ -9,11 +9,19 @@ const { link } = require('fs')
 
 
 module.exports.login = async function(req, res)  {
+    const { email, password } = req.body;
+
+console.log(email)
+console.log(password)
      const candidate = await User.findOne({email: req.body.email})
+     console.log(candidate)
      if(candidate){
+        console.log(`candidate: ${candidate}  I am inside the if`)
         //we find user in db and start to verify password
          const passRes = bcrypt.compareSync(req.body.password,  candidate.password)
+         console.log(`passRes: ${passRes}`)
          if(passRes){
+            console.log(`passRes: ${passRes}  I am inside the if`)
             //generate JWT
             const token = jwt.sign({
                 email: candidate.email,
@@ -25,9 +33,10 @@ module.exports.login = async function(req, res)  {
             })
          }else{
             //password is not correcrly
-            res.status(404).json({
+             /*res.status(404).json({
                 massage: "Check your password, please!"
-            })
+            })*/
+            res.status(404).json({ error: error.message, message: 'Check your password' });
          }
      }else{
         //we dont find user in db
@@ -38,7 +47,7 @@ module.exports.login = async function(req, res)  {
 }
 
 module.exports.register = async function(req, res){
-
+    
     const candidate = await User.findOne({email: req.body.email})
     const password = req.body.password
     const passwordconf = req.body.passwordconf

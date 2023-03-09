@@ -5,22 +5,22 @@ import logo from "../assets/netvibe_2-removebg-preview.png";
 
 export default function Registration() {
   const navigate = useNavigate();
-  const [name, setName] = useState("");
+  const [username, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [passwordconf, setPasswordConfirmation] = useState("");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       const response = await axios.post("http://localhost:3000/api/auth/register", {
-        name,
+        username,
         email,
         password,
-        passwordConfirmation,
+        passwordconf,
       });
       console.log(response.data);
-      navigate("/login");
+      navigate("/api/auth/login");
     } catch (error) {
       console.error(error);
       alert("Registration failed! Please check your email and password and try again.");
@@ -53,7 +53,7 @@ export default function Registration() {
                 id="name"
                 placeholder="Enter name"
                 required
-                value={name}
+                value={username}
                 onChange={(event) => setName(event.target.value)}
               />
               <input
@@ -80,10 +80,10 @@ export default function Registration() {
                 className="rounded-md bg-zinc-500 p-2 outline-none"
                 type="password"
                 name="password"
-                id="confirmpassword"
+                id="passwordconf"
                 placeholder="Confirmation Password"
                 required
-                value={password}
+                value={passwordconf}
                 onChange={(event) => setPasswordConfirmation(event.target.value)}
               />
               <p>
@@ -93,16 +93,16 @@ export default function Registration() {
               </Link>
             </p>
               <div className="flex justify-center items-center">
-              <Link to="/planpay">
+              
               <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                 Sign Up
               </button>
-              </Link>
+              
               </div>
             </section>
             <p>
               Already have an account?{" "}
-              <Link to="/login" className="text-white hover:underline">
+              <Link to="/api/auth/login" className="text-white hover:underline">
                 Log In
               </Link>
             </p>

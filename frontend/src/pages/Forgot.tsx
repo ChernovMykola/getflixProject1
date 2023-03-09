@@ -1,10 +1,13 @@
-import React, { FormEvent, useEffect } from "react";
+import React, { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/netvibe_2-removebg-preview.png";
+import axios from "axios";
 
 export default function Forgot() {
     // const { signIn, user } = useAuth() as AuthContextType;
      const navigate = useNavigate()
+
+     
 
      return (
         <>
@@ -42,7 +45,7 @@ export default function Forgot() {
                     required
                   />
                   <div className="flex justify-center items-center">
-                  <Link to="/login">
+                  <Link to="/api/auth/login">
                   <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                     Submit
                   </button>
