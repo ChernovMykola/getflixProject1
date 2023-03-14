@@ -29,7 +29,6 @@ function SignIn({}: Props) {
           <SigninBanner />
           <EnjoyOnTv />
           <DownloadShows />
-          <Children />
           <div className="border-b-8 border-gray-800 pb-8">
             <Questions />
             <Membership />

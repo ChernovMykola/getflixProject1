@@ -24,11 +24,16 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
         {movies.map((movie) =>
            (
 
-            < div key={movie.id}>
-           <p>{movie.title}</p>
-           <img src={movie.url} />
+            <div key={movie.id}>
+              <p>{movie.title}</p>
+              <p>{movie.releaseYear}</p>
+              <p>{movie.synopsis}</p>
+              <img src={movie.url} />
+              <video controls>
+              <source src={movie.trailer} type="video/mp4" />
+              </video>
 
-           </div>
+            </div>
            )
         
         )}

@@ -16,7 +16,7 @@ export default function Email() {
           email,
         });
         console.log(response.data);
-        navigate("/");
+        navigate("/api/auth/login");
       } catch (error) {
         console.error(error);
         alert("Email does not exist.");

@@ -20,7 +20,7 @@ import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import SignIn from "./components/SignIn";
 import Forgotpassword from "./pages/Forgotpassword";
-
+import Combine from "./main/combine";
 
 
 function AppRouter() {
@@ -39,7 +39,7 @@ function AppRouter() {
         <Route path="/landing" element={<SignIn />} />
         <Route path="/homescreen" element={<HomeScreen />} />
         <Route path="*" element={<NotFound />} />
-        
+        <Route path="/combine" element={<Combine />} />
    
       </>
     )
