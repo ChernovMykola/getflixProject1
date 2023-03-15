@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "App.tsx",
+  "main": "/src/components/SignIn.tsx",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
