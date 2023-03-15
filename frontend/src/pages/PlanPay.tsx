@@ -89,7 +89,7 @@ function PP() {
                 required
               />
               <div className="flex justify-center items-center">
-              <Link to="/homescreen">
+              <Link to="/combine">
               <button className="my-8 rounded-md bg-subMain p-2 font-semibold text-white outline-none">
                 Sign Up
               </button>
