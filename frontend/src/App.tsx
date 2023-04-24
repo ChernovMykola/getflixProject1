@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -8,10 +8,8 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import HomeScreen from "./pages/HomeScreen";
-import NotFound from "./components/NotFound";
-import PopularMovies from "./components/PopularMovies";
 
+import NotFound from "./components/NotFound";
 import Login from "./pages/Login";
 import Forgot from "./pages/Forgot";
 import Registration from "./pages/Registration";
@@ -20,7 +18,7 @@ import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import SignIn from "./components/SignIn";
 import Forgotpassword from "./pages/Forgotpassword";
-import Combine from "./main/combine";
+import Combine from "./pages/main/combine";
 
 
 function AppRouter() {
@@ -36,8 +34,7 @@ function AppRouter() {
         <Route path="/planpay" element={<PlanPay />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/landing" element={<SignIn />} />
-        <Route path="/homescreen" element={<HomeScreen />} />
+        <Route path="/" element={<SignIn />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/combine" element={<Combine />} />
    

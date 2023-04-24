@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaSearch,FaHeart } from "react-icons/fa";
 import { CgUser } from "react-icons/cg";
-import logo from "../../assets/netvibe_2-removebg-preview.png";
+import logo from "../../../assets/netvibe_2-removebg-preview.png";
 
 
 interface NavBarProps {}

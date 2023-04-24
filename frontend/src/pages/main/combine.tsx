@@ -1,9 +1,8 @@
-import HomePage from "../home/HomePage"
 import { BrowserRouter as Router, Route } from "react-router-dom"
-import SinglePage from "./watch/SinglePage"
 import Header from "./header/Header"
 import Footer from "./footer/Footer"
-
+import Video from "./other/video";
+import Movies from "./other/Allmovies";
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -15,8 +14,8 @@ interface LayoutProps {
   <div className='bg-main text-white'>
   <Header />
   {children}
-  <HomePage/>
-  <SinglePage />
+    <Video/>
+    <Movies/>
   <Footer />
   </div>
   </>
